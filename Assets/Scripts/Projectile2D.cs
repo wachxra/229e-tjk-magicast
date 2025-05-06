@@ -14,7 +14,6 @@ public class Projectile2D : MonoBehaviour
         {
             if (!PlayerStatusManager.instance.UseMana(manaCost))
             {
-                Debug.Log("Not enough mana to shoot!");
                 return;
             }
 
@@ -26,8 +25,7 @@ public class Projectile2D : MonoBehaviour
             if (hit.collider != null)
             {
                 target.transform.position = new Vector2(hit.point.x, hit.point.y);
-                Debug.Log("Hit: " + hit.collider.name);
-
+                
                 Vector2 projectileVelocity = CalculateProjectileVelocity(shootPoint.position, hit.point, 1f);
                 Rigidbody2D shootBullet = Instantiate(bulletPrefab, shootPoint.position, Quaternion.identity);
                 shootBullet.linearVelocity = projectileVelocity;
