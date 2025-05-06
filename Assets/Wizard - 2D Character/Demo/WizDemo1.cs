@@ -7,8 +7,9 @@ namespace ClearSky
 {
     public class WizDemo1 : MonoBehaviour
     {
-        Animator anim;
 
+        Animator anim;
+        // Start is called before the first frame update
         void Awake()
         {
             anim = GetComponent<Animator>();
