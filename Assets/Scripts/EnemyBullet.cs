@@ -11,7 +11,7 @@ public class EnemyBullet : MonoBehaviour
             PlayerStatusManager.instance.TakeDamage(damage);
             Destroy(gameObject);
         }
-        else if (collision.CompareTag("Ground") || collision.CompareTag("Wall"))
+        else if (collision.CompareTag("Ground")/* || collision.CompareTag("Wall")*/)
         {
             Destroy(gameObject);
         }

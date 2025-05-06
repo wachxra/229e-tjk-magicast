@@ -905,12 +905,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb73eef6d4d99a145a60daa66ac6b4ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1784372698}
   pointA: {fileID: 2014723629}
   pointB: {fileID: 1528457339}
   moveSpeed: 5
   visionRange: 5
   shootingCooldown: 3
-  bulletPrefab: {fileID: 6315231073374191168, guid: 43bb16fccf4e81e4195341aa2a5b5a21, type: 3}
+  bulletPrefab: {fileID: 2587040680057857972, guid: 3d083194b2a50f0428e4c8840d658508, type: 3}
   shootPoint: {fileID: 850373568}
   bulletSpeed: 15
   contactDamage: 10
@@ -1716,6 +1717,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1756967553}
   m_CullTransparentMesh: 1
+--- !u!1 &1784372698 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4403665854658202145, guid: f61eb06ae102e8f4a81a15260c79a435, type: 3}
+  m_PrefabInstance: {fileID: 1475184578}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1833478929
 GameObject:
   m_ObjectHideFlags: 0

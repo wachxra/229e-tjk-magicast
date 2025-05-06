@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    [SerializeField] private GameObject player;
+
     public Transform pointA;
     public Transform pointB;
     public float moveSpeed = 2f;
@@ -13,7 +15,6 @@ public class Enemy : MonoBehaviour
     public float contactDamage = 10f;
 
     private Transform targetPoint;
-    private GameObject player;
     private float shootTimer;
 
     void Start()
@@ -49,7 +50,11 @@ public class Enemy : MonoBehaviour
         if (Vector2.Distance(transform.position, targetPoint.position) < 0.2f)
         {
             targetPoint = targetPoint == pointA ? pointB : pointA;
+        }
 
+        if ((targetPoint.position.x - transform.position.x > 0f && transform.localScale.x < 0f) ||
+            (targetPoint.position.x - transform.position.x < 0f && transform.localScale.x > 0f))
+        {
             Vector3 scale = transform.localScale;
             scale.x *= -1;
             transform.localScale = scale;
@@ -58,8 +63,17 @@ public class Enemy : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, targetPoint.position, moveSpeed * Time.deltaTime);
     }
 
+
     void FollowPlayer()
     {
+        if ((player.transform.position.x - transform.position.x > 0f && transform.localScale.x < 0f) ||
+            (player.transform.position.x - transform.position.x < 0f && transform.localScale.x > 0f))
+        {
+            Vector3 scale = transform.localScale;
+            scale.x *= -1;
+            transform.localScale = scale;
+        }
+
         transform.position = Vector2.MoveTowards(transform.position, player.transform.position, moveSpeed * Time.deltaTime);
     }
 
