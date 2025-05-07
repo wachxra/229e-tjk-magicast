@@ -14,16 +14,22 @@ public class PlayerStatusManager : MonoBehaviour
     public Slider manaBar;
     public Slider hpBar;
 
+    [Header("Scene Persistence")]
+    public bool isPersistentInstance = true;
+
     private void Awake()
     {
-        if (instance == null)
+        if (isPersistentInstance)
         {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
+            if (instance == null)
+            {
+                instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
     }
 
