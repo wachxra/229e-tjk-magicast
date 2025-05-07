@@ -49482,7 +49482,7 @@ PrefabInstance:
       objectReference: {fileID: 1601685084}
     - target: {fileID: 3941817286099229827, guid: cfc00993394ee144fbe480d410a3ac90, type: 3}
       propertyPath: maxHealth
-      value: 20
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3941817286099229827, guid: cfc00993394ee144fbe480d410a3ac90, type: 3}
       propertyPath: healthSlider
@@ -50149,8 +50149,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1783877222254113934, guid: 1defbd4b721a2cb408ba8a374ac75651, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 220.45465
+      objectReference: {fileID: 0}
+    - target: {fileID: 1783877222254113934, guid: 1defbd4b721a2cb408ba8a374ac75651, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.8
+      value: 31.3
       objectReference: {fileID: 0}
     - target: {fileID: 1783877222254113934, guid: 1defbd4b721a2cb408ba8a374ac75651, type: 3}
       propertyPath: m_LocalPosition.y
@@ -50187,6 +50191,10 @@ PrefabInstance:
     - target: {fileID: 1783877222254113934, guid: 1defbd4b721a2cb408ba8a374ac75651, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2454140883195646738, guid: 1defbd4b721a2cb408ba8a374ac75651, type: 3}
+      propertyPath: m_SortingOrder
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6819841671380127509, guid: 1defbd4b721a2cb408ba8a374ac75651, type: 3}
       propertyPath: m_Name

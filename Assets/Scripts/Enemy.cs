@@ -4,6 +4,10 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] private GameObject player;
 
+    [Header("Health Settings")]
+    [SerializeField] private int maxHealth = 3;
+    private int currentHealth;
+
     public Transform pointA;
     public Transform pointB;
     public float moveSpeed = 2f;
@@ -22,6 +26,7 @@ public class Enemy : MonoBehaviour
         targetPoint = pointB;
         player = GameObject.FindGameObjectWithTag("Player");
         shootTimer = 0f;
+        currentHealth = maxHealth;
     }
 
     void Update()
@@ -89,6 +94,21 @@ public class Enemy : MonoBehaviour
         if (collision.collider.CompareTag("Player"))
         {
             PlayerStatusManager.instance.TakeDamage(contactDamage);
+        }
+        else if (collision.collider.CompareTag("PlayerBullet"))
+        {
+            TakeDamage(1);
+            Destroy(collision.collider.gameObject);
+        }
+    }
+
+    public void TakeDamage(int amount)
+    {
+        currentHealth -= amount;
+
+        if (currentHealth <= 0)
+        {
+            Destroy(gameObject);
         }
     }
 }
