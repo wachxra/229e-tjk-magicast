@@ -4,10 +4,25 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     public GameObject howToPlayPanel;
+    public GameObject deathPanel;
 
     public void StartGame()
     {
-        SceneManager.LoadScene("Tutorial");
+        ResetGameStatus();
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("TutorialScene");
+    }
+
+    public void TryAgain()
+    {
+        if (deathPanel != null)
+        {
+            deathPanel.SetActive(false);
+        }
+
+        ResetGameStatus();
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void ExitGame()
@@ -20,6 +35,12 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("EndCredit");
     }
 
+    public void BackToMainMenu()
+    {
+        ResetGameStatus();
+        SceneManager.LoadScene("MainMenu");
+    }
+
     public void ShowHowToPlay()
     {
         howToPlayPanel.SetActive(true);
@@ -28,5 +49,15 @@ public class MainMenu : MonoBehaviour
     public void HideHowToPlay()
     {
         howToPlayPanel.SetActive(false);
+    }
+
+    private void ResetGameStatus()
+    {
+        PlayerStatusManager instance = FindObjectOfType<PlayerStatusManager>();
+        if (instance != null)
+        {
+            Destroy(instance.gameObject);
+            PlayerStatusManager.instance = null;
+        }
     }
 }

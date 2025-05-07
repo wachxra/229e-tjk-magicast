@@ -11,11 +11,19 @@ public class PlayerController : MonoBehaviour
     private int direction = 1;
     bool isJumping = false;
     private bool alive = true;
+    public GameObject deathPanel;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+
+        alive = true;
+
+        if (deathPanel != null)
+        {
+            deathPanel.SetActive(false);
+        }
     }
 
     private void Update()
@@ -28,7 +36,6 @@ public class PlayerController : MonoBehaviour
             Attack();
             Jump();
             Run();
-
         }
     }
 
@@ -116,8 +123,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            anim.SetTrigger("die");
-            alive = false;
+            HandleDeath();
         }
     }
 
@@ -127,6 +133,38 @@ public class PlayerController : MonoBehaviour
         {
             anim.SetTrigger("idle");
             alive = true;
+            Time.timeScale = 1f;
+            if (deathPanel != null)
+            {
+                deathPanel.SetActive(false);
+            }
+        }
+    }
+
+    void UsePotions()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            InventoryManager.instance.UseItem(ItemType.HP_POTION);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            InventoryManager.instance.UseItem(ItemType.MANA_POTION);
+        }
+    }
+
+    public void HandleDeath()
+    {
+        if (alive)
+        {
+            alive = false;
+            anim.SetTrigger("die");
+            if (deathPanel != null)
+            {
+                deathPanel.SetActive(true);
+                Time.timeScale = 0f;
+            }
         }
     }
 }

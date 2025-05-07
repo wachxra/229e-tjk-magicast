@@ -34,6 +34,15 @@ public class PlayerStatusManager : MonoBehaviour
 
         if (hpBar != null)
             hpBar.value = currentHP / maxHP;
+
+        if (currentHP <= 0)
+        {
+            PlayerController player =  FindObjectOfType<PlayerController>();
+            if (player != null)
+            {
+                player.HandleDeath();
+            }
+        }
     }
 
     public bool UseMana(float amount)
@@ -60,16 +69,4 @@ public class PlayerStatusManager : MonoBehaviour
     {
         currentHP = Mathf.Clamp(currentHP + amount, 0, maxHP);
     }
-
-    /*public void UseItem(ItemType type)
-    {
-        if (type == ItemType.HP_POTION)
-        {
-            HealHP(20f);
-        }
-        else if (type == ItemType.MANA_POTION)
-        {
-            RestoreMana(20f);
-        }
-    }*/
 }
