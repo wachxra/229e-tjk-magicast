@@ -9,6 +9,12 @@ public class DoorTrigger : MonoBehaviour
     [SerializeField] private Camera targetCamera;
 
     private bool playerInRange = false;
+    private AudioManager audioManager;
+
+    private void Start()
+    {
+        audioManager = FindFirstObjectByType<AudioManager>();
+    }
 
     private void Update()
     {
@@ -17,6 +23,8 @@ public class DoorTrigger : MonoBehaviour
             if (InventoryManager.instance.HasKey())
             {
                 InventoryManager.instance.UseKey();
+
+                audioManager.PlayDoor();
 
                 if (useSceneTransition)
                 {

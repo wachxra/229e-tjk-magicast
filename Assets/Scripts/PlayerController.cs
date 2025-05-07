@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D rb;
     private Animator anim;
+    private AudioManager audioManager;
+
     Vector3 movement;
     private int direction = 1;
     bool isJumping = false;
@@ -17,6 +19,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        audioManager = FindFirstObjectByType<AudioManager>();
 
         alive = true;
 
@@ -51,6 +54,8 @@ public class PlayerController : MonoBehaviour
                 rb.AddForce(new Vector2(-5f, 1f), ForceMode2D.Impulse);
             else
                 rb.AddForce(new Vector2(5f, 1f), ForceMode2D.Impulse);
+
+            audioManager.PlayHurt();
         }
     }
 
@@ -61,6 +66,8 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetAxisRaw("Horizontal") < 0)
         {
+            audioManager.PlayWalk();
+
             direction = -1;
             moveVelocity = Vector3.left;
 
@@ -74,6 +81,8 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetAxisRaw("Horizontal") > 0)
         {
+            audioManager.PlayWalk();
+
             direction = 1;
             moveVelocity = Vector3.right;
 
@@ -95,6 +104,8 @@ public class PlayerController : MonoBehaviour
         {
             isJumping = true;
             anim.SetBool("isJump", true);
+
+            audioManager.PlayJump();
         }
         if (!isJumping)
         {
@@ -114,6 +125,8 @@ public class PlayerController : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             anim.SetTrigger("attack");
+
+            audioManager.PlayHit();
         }
     }
 
@@ -128,6 +141,8 @@ public class PlayerController : MonoBehaviour
             {
                 deathPanel.SetActive(false);
             }
+
+            audioManager.PlayWalk();
         }
     }
 
@@ -140,6 +155,8 @@ public class PlayerController : MonoBehaviour
                 if (InventoryManager.instance.UseItem(ItemType.HP_POTION))
                 {
                     anim.SetTrigger("attack");
+
+                    audioManager.PlayPotion();
                 }
             }
         }
@@ -151,11 +168,12 @@ public class PlayerController : MonoBehaviour
                 if (InventoryManager.instance.UseItem(ItemType.MANA_POTION))
                 {
                     anim.SetTrigger("attack");
+
+                    audioManager.PlayManaPotion();
                 }
             }
         }
     }
-
 
     public void HandleDeath()
     {
@@ -163,6 +181,9 @@ public class PlayerController : MonoBehaviour
         {
             alive = false;
             anim.SetTrigger("die");
+
+            audioManager.PlayDie();
+
             if (deathPanel != null)
             {
                 deathPanel.SetActive(true);

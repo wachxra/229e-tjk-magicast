@@ -10,11 +10,17 @@ public class Chest : MonoBehaviour
         public int amount;
     }
 
+    private AudioManager audioManager;
     [SerializeField] private Animator animator;
     [SerializeField] private ChestItem[] itemsInChest;
     [SerializeField] private bool isOpened = false;
 
     private bool playerInRange = false;
+
+    private void Start()
+    {
+        audioManager = FindFirstObjectByType<AudioManager>();
+    }
 
     private void Update()
     {
@@ -29,6 +35,8 @@ public class Chest : MonoBehaviour
         isOpened = true;
         if (animator != null)
             animator.SetTrigger("open");
+
+        audioManager.PlayItem();
 
         foreach (var item in itemsInChest)
         {
