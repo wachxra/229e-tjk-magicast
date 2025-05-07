@@ -2879,6 +2879,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 331528352}
+  maxHealth: 5
   pointA: {fileID: 1164254714}
   pointB: {fileID: 632351265}
   moveSpeed: 5
@@ -2886,8 +2887,8 @@ MonoBehaviour:
   shootingCooldown: 1
   bulletPrefab: {fileID: 1358929087550507989, guid: 3d083194b2a50f0428e4c8840d658508, type: 3}
   shootPoint: {fileID: 850229880}
-  bulletSpeed: 5
-  contactDamage: 10
+  bulletSpeed: 10
+  contactDamage: 15
 --- !u!50 &261583292
 Rigidbody2D:
   serializedVersion: 5
