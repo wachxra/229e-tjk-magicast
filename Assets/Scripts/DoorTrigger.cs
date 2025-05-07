@@ -6,6 +6,7 @@ public class DoorTrigger : MonoBehaviour
     [SerializeField] private string sceneToLoad;
     [SerializeField] private Transform destinationPoint;
     [SerializeField] private bool useSceneTransition = true;
+    [SerializeField] private Camera targetCamera; // เพิ่มกล้องที่จะใช้หลังจากเปิดประตู
 
     private bool playerInRange = false;
 
@@ -27,6 +28,17 @@ public class DoorTrigger : MonoBehaviour
                     if (player != null && destinationPoint != null)
                     {
                         player.transform.position = destinationPoint.position;
+
+                        Camera[] allCameras = Camera.allCameras;
+                        foreach (Camera cam in allCameras)
+                        {
+                            cam.gameObject.SetActive(false);
+                        }
+
+                        if (targetCamera != null)
+                        {
+                            targetCamera.gameObject.SetActive(true);
+                        }
                     }
                 }
             }
