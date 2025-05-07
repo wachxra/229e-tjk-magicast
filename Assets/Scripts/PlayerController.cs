@@ -31,11 +31,9 @@ public class PlayerController : MonoBehaviour
         Restart();
         if (alive)
         {
-            Hurt();
-            Die();
-            Attack();
-            Jump();
             Run();
+            Jump();
+            Attack();
             UsePotions();
         }
     }
@@ -43,6 +41,17 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         anim.SetBool("isJump", false);
+
+        if (other.CompareTag("Enemy") && alive)
+        {
+            anim.SetTrigger("hurt");
+            PlayerStatusManager.instance.TakeDamage(10f);
+
+            if (direction == 1)
+                rb.AddForce(new Vector2(-5f, 1f), ForceMode2D.Impulse);
+            else
+                rb.AddForce(new Vector2(5f, 1f), ForceMode2D.Impulse);
+        }
     }
 
     void Run()
@@ -102,29 +111,9 @@ public class PlayerController : MonoBehaviour
 
     void Attack()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetMouseButtonDown(0))
         {
             anim.SetTrigger("attack");
-        }
-    }
-
-    void Hurt()
-    {
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            anim.SetTrigger("hurt");
-            if (direction == 1)
-                rb.AddForce(new Vector2(-5f, 1f), ForceMode2D.Impulse);
-            else
-                rb.AddForce(new Vector2(5f, 1f), ForceMode2D.Impulse);
-        }
-    }
-
-    void Die()
-    {
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            HandleDeath();
         }
     }
 
@@ -146,14 +135,27 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            InventoryManager.instance.UseItem(ItemType.HP_POTION);
+            if (PlayerStatusManager.instance.currentHP < PlayerStatusManager.instance.maxHP)
+            {
+                if (InventoryManager.instance.UseItem(ItemType.HP_POTION))
+                {
+                    anim.SetTrigger("attack");
+                }
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            InventoryManager.instance.UseItem(ItemType.MANA_POTION);
+            if (PlayerStatusManager.instance.currentMana < PlayerStatusManager.instance.maxMana)
+            {
+                if (InventoryManager.instance.UseItem(ItemType.MANA_POTION))
+                {
+                    anim.SetTrigger("attack");
+                }
+            }
         }
     }
+
 
     public void HandleDeath()
     {
