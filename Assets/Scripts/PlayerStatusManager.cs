@@ -19,18 +19,22 @@ public class PlayerStatusManager : MonoBehaviour
 
     private void Awake()
     {
-        if (isPersistentInstance)
+        if (instance == null)
         {
-            if (instance == null)
-            {
-                instance = this;
-                DontDestroyOnLoad(gameObject);
-            }
-            else
-            {
-                Destroy(gameObject);
-            }
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+            ResetStatus();
         }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    public void ResetStatus()
+    {
+        currentHP = maxHP;
+        currentMana = maxMana;
     }
 
     private void Update()

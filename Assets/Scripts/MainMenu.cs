@@ -59,18 +59,19 @@ public class MainMenu : MonoBehaviour
         if (clickSound != null)
         {
             clickSound.Play();
-            Invoke(nameof(ReloadCurrentScene), clickSound.clip.length);
+            Invoke(nameof(LoadTutorialScene), clickSound.clip.length);
         }
         else
         {
-            ReloadCurrentScene();
+            LoadTutorialScene();
         }
     }
 
-    private void ReloadCurrentScene()
+    private void LoadTutorialScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("TutorialScene");
     }
+
 
     public void ExitGame()
     {
