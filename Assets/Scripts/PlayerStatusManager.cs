@@ -37,7 +37,7 @@ public class PlayerStatusManager : MonoBehaviour
 
         if (currentHP <= 0)
         {
-            PlayerController player =  FindObjectOfType<PlayerController>();
+            PlayerController player = FindFirstObjectByType<PlayerController>();
             if (player != null)
             {
                 player.HandleDeath();

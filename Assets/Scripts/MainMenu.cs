@@ -53,7 +53,7 @@ public class MainMenu : MonoBehaviour
 
     private void ResetGameStatus()
     {
-        PlayerStatusManager instance = FindObjectOfType<PlayerStatusManager>();
+        PlayerStatusManager instance = FindFirstObjectByType<PlayerStatusManager>();
         if (instance != null)
         {
             Destroy(instance.gameObject);
