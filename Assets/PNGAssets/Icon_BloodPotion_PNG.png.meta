@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Icon_BloodPotion_PNG_0: -1494617714900139733
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
