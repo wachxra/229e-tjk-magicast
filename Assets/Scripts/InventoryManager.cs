@@ -9,6 +9,9 @@ public class InventoryManager : MonoBehaviour
     public int hpPotions = 0;
     public int manaPotions = 0;
 
+    public float hpHealAmount = 20f;
+    public float manaRestoreAmount = 20f;
+
     private void Awake()
     {
         if (instance == null) instance = this;
@@ -41,7 +44,7 @@ public class InventoryManager : MonoBehaviour
                 if (hpPotions > 0)
                 {
                     hpPotions--;
-                    PlayerStatusManager.instance.HealHP(20f);
+                    PlayerStatusManager.instance.HealHP(hpHealAmount);
                     return true;
                 }
                 break;
@@ -49,7 +52,7 @@ public class InventoryManager : MonoBehaviour
                 if (manaPotions > 0)
                 {
                     manaPotions--;
-                    PlayerStatusManager.instance.RestoreMana(20f);
+                    PlayerStatusManager.instance.RestoreMana(manaRestoreAmount);
                     return true;
                 }
                 break;

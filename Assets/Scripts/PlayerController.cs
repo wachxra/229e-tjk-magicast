@@ -36,6 +36,7 @@ public class PlayerController : MonoBehaviour
             Attack();
             Jump();
             Run();
+            UsePotions();
         }
     }
 
