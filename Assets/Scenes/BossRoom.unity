@@ -2879,7 +2879,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 331528352}
-  maxHealth: 5
+  maxHealth: 7
   pointA: {fileID: 1164254714}
   pointB: {fileID: 632351265}
   moveSpeed: 5

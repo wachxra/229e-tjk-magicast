@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - PlayerBullet
   - PlayerBullets
+  - HPBar
+  - ManaBar
   layers:
   - Default
   - TransparentFX

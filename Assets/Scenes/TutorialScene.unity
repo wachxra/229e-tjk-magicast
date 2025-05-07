@@ -50048,6 +50048,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3263521392413178334, guid: e2d72878c907f2f45b03ba745a78578a, type: 3}
+      propertyPath: m_TagString
+      value: ManaBar
+      objectReference: {fileID: 0}
     - target: {fileID: 4364229629475322280, guid: e2d72878c907f2f45b03ba745a78578a, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -50131,6 +50135,10 @@ PrefabInstance:
     - target: {fileID: 5448043409095651228, guid: e2d72878c907f2f45b03ba745a78578a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6434614988078770388, guid: e2d72878c907f2f45b03ba745a78578a, type: 3}
+      propertyPath: m_TagString
+      value: HPBar
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
