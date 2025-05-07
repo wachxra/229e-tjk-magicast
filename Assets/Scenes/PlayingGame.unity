@@ -54409,6 +54409,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerStatusManager
       objectReference: {fileID: 0}
+    - target: {fileID: 1845061876820216431, guid: b73fcac48e28a5a49ac849349abfd2ea, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1845061876820216431, guid: b73fcac48e28a5a49ac849349abfd2ea, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 1845061876820216431, guid: b73fcac48e28a5a49ac849349abfd2ea, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     - target: {fileID: 2744109651811939917, guid: b73fcac48e28a5a49ac849349abfd2ea, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
