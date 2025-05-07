@@ -150,6 +150,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1222318436}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &10951624 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7161805034540474179, guid: e2d72878c907f2f45b03ba745a78578a, type: 3}
+  m_PrefabInstance: {fileID: 692101985}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &13232027
 GameObject:
   m_ObjectHideFlags: 0
@@ -4815,6 +4826,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 177349989}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &208428486 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3061884162603384624, guid: e2d72878c907f2f45b03ba745a78578a, type: 3}
+  m_PrefabInstance: {fileID: 692101985}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &208832588
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4904,6 +4926,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39121ebc63960dc4f883d897b9f05e3e, type: 3}
+--- !u!114 &210003275 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1044595294950288503, guid: e2d72878c907f2f45b03ba745a78578a, type: 3}
+  m_PrefabInstance: {fileID: 692101985}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &211298988
 GameObject:
   m_ObjectHideFlags: 0
@@ -14543,7 +14576,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 446574525967836477, guid: e2d72878c907f2f45b03ba745a78578a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2092715573}
   m_SourcePrefab: {fileID: 100100000, guid: e2d72878c907f2f45b03ba745a78578a, type: 3}
 --- !u!1 &692301929
 GameObject:
@@ -36600,6 +36636,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8062249579028192596, guid: ccac4780e19370d47ba70f0283c11103, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -42630,6 +42670,10 @@ PrefabInstance:
     - target: {fileID: 8062249579028192596, guid: ccac4780e19370d47ba70f0283c11103, type: 3}
       propertyPath: m_Name
       value: Main Camera (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062249579028192596, guid: ccac4780e19370d47ba70f0283c11103, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -50005,6 +50049,26 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.38, y: 0.42}
   m_EdgeRadius: 0
+--- !u!1 &2092715571 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 446574525967836477, guid: e2d72878c907f2f45b03ba745a78578a, type: 3}
+  m_PrefabInstance: {fileID: 692101985}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2092715573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092715571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7d14fc321be21d46a4ea56279d4940d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyText: {fileID: 210003275}
+  hpPotionText: {fileID: 208428486}
+  manaPotionText: {fileID: 10951624}
 --- !u!1 &2093021232
 GameObject:
   m_ObjectHideFlags: 0

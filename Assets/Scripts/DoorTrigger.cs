@@ -6,7 +6,7 @@ public class DoorTrigger : MonoBehaviour
     [SerializeField] private string sceneToLoad;
     [SerializeField] private Transform destinationPoint;
     [SerializeField] private bool useSceneTransition = true;
-    [SerializeField] private Camera targetCamera; // เพิ่มกล้องที่จะใช้หลังจากเปิดประตู
+    [SerializeField] private Camera targetCamera;
 
     private bool playerInRange = false;
 
