@@ -6055,6 +6055,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9145898697036221456, guid: f61eb06ae102e8f4a81a15260c79a435, type: 3}
   m_PrefabInstance: {fileID: 1607606196068201088}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &244724848 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 198554345844621685, guid: 796c53a54a3f6f24788eedc971ac3420, type: 3}
+  m_PrefabInstance: {fileID: 2362094434441860078}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &254986496
 GameObject:
   m_ObjectHideFlags: 0
@@ -46554,6 +46559,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!224 &2025055396 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4364229629475322280, guid: e2d72878c907f2f45b03ba745a78578a, type: 3}
+  m_PrefabInstance: {fileID: 4594567443804480169}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2042138706 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7730023291812254614, guid: d4071901789ed384389951219d1e0315, type: 3}
@@ -49614,6 +49624,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1023381894187457663, guid: f61eb06ae102e8f4a81a15260c79a435, type: 3}
+      propertyPath: jumpPower
+      value: 16.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1023381894187457663, guid: f61eb06ae102e8f4a81a15260c79a435, type: 3}
       propertyPath: deathPanel
       value: 
       objectReference: {fileID: 1664056424}
@@ -49744,7 +49758,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 198554345844621685, guid: 796c53a54a3f6f24788eedc971ac3420, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2025055396}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 796c53a54a3f6f24788eedc971ac3420, type: 3}
 --- !u!1001 &2430223522923496844
@@ -50038,7 +50055,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 244724848}
     m_Modifications:
     - target: {fileID: 328581068200388752, guid: e2d72878c907f2f45b03ba745a78578a, type: 3}
       propertyPath: m_Name
@@ -50233,7 +50250,6 @@ SceneRoots:
   - {fileID: 1607606196068201088}
   - {fileID: 666406619319552958}
   - {fileID: 1425049536}
-  - {fileID: 4594567443804480169}
   - {fileID: 809715291}
   - {fileID: 3849141763845772067}
   - {fileID: 943005766990022364}

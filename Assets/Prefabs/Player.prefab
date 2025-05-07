@@ -266,7 +266,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
-  jumpPower: 15
+  jumpPower: 18
+  deathPanel: {fileID: 0}
 --- !u!114 &5916488475993977915
 MonoBehaviour:
   m_ObjectHideFlags: 0

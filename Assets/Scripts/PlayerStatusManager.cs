@@ -22,7 +22,6 @@ public class PlayerStatusManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
             ResetStatus();
         }
         else
